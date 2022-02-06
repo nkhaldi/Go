@@ -6,7 +6,7 @@ import (
 )
 
 
-func go_printer(x1, x2 int, ch chan bool) {
+func goPrinter(x1, x2 int, ch chan bool) {
     for i := x1; i <= x2; i++ {
         time.Sleep(100 * time.Millisecond)
         fmt.Println(i)
@@ -18,8 +18,8 @@ func go_printer(x1, x2 int, ch chan bool) {
 func main() {
     ch := make(chan bool)
     fmt.Println("Begin")
-    go go_printer(0, 5, ch)
-    go go_printer(6, 10, ch)
+    go goPrinter(0, 5, ch)
+    go goPrinter(6, 10, ch)
     fmt.Println("Fin")
     <-ch
     <-ch
