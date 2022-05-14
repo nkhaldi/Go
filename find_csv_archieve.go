@@ -17,7 +17,7 @@ import (
 )
 
 func main() {
-	archieve, err := zip.OpenReader("task.zip")
+	archieve, err := zip.OpenReader("tests/task.zip")
 	defer archieve.Close()
     if err != nil {
         panic(err)
