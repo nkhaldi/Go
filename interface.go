@@ -1,26 +1,25 @@
 package main
 
 import (
-	"encoding/json"
-	"fmt"
 	"os"
+	"fmt"
+	"encoding/json"
 )
 
-
 func main() {
-    // readTask возвращзает значения для операндов и оператора
-    // в формате пустого интерфейса
+	// readTask возвращзает значения для операндов и оператора
+	// в формате пустого интерфейса
 	value1, value2, operation := readTask()
 
-	v1, ok1 := value1.(float64); 
-    if !ok1 {
+	v1, ok1 := value1.(float64)
+	if !ok1 {
 		fmt.Print("value=", value1, ": ")
 		fmt.Printf("%T", value1)
 		return
 	}
 
-    v2, ok2 := value2.(float64);
-    if !ok2 {
+	v2, ok2 := value2.(float64)
+	if !ok2 {
 		fmt.Print("value=", value2, ": ")
 		fmt.Printf("%T", value2)
 		return
@@ -41,21 +40,20 @@ func main() {
 
 }
 
-
 func calc(a, b float64, op string) float64 {
 	switch op {
-    case "+":
-        return a + b
-    case "-":
+	case "+":
+		return a + b
+	case "-":
 		return a - b
 	case "*":
 		return a * b
 	case "/":
-        if b != 0 {
-            return a / b
-        } else {
-            return 0.0
-        }
+		if b != 0 {
+			return a / b
+		} else {
+			return 0.0
+		}
 	default:
 		return 0.0
 	}
