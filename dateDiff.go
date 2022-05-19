@@ -17,12 +17,12 @@ import (
 )
 
 func main() {
-	rd, err := bufio.NewReader(os.Stdin).ReadString('\n')
+	input, err := bufio.NewReader(os.Stdin).ReadString('\n')
 	if err != nil && err != io.EOF {
 		panic(err)
 	}
+	dates := strings.Split(strings.Trim(input, "\n"), ",")
 
-	dates := strings.Split(strings.Trim(rd, "\n"), ",")
 	date1, err := time.Parse("02.01.2006 15:04:05", dates[0])
 	if err != nil {
 		panic(err)
