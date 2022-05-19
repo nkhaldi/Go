@@ -11,9 +11,9 @@
 package main
 
 import (
-	"fmt"
 	"archive/zip"
 	"encoding/csv"
+	"fmt"
 )
 
 func main() {

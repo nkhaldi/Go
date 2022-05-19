@@ -3,12 +3,12 @@
 package main
 
 import (
+	"bufio"
+	"fmt"
 	"io"
 	"os"
-	"fmt"
-	"time"
-	"bufio"
 	"strings"
+	"time"
 )
 
 func main() {
@@ -18,7 +18,7 @@ func main() {
 	}
 
 	dates := strings.Split(strings.Trim(rd, "\n"), ",")
-    date1, err := time.Parse("02.01.2006 15:04:05", dates[0])
+	date1, err := time.Parse("02.01.2006 15:04:05", dates[0])
 	if err != nil {
 		panic(err)
 	}

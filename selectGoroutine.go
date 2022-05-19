@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"time"
 	"strconv"
+	"time"
 )
 
 func tester(num int, ch chan string) {
