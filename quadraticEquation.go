@@ -5,18 +5,29 @@ import (
     "math"
 )
 
-func main() {
-    for {
-    a, b, c := getParameters()
-    printEquation(a, b, c)
-        fmt.Println("\n")
-    }
-    //x1, x2 := solveEquation(a, b, c)
-    //fmt.Printf("x1 = %.2f, x2 = %.2f\n", x1, x2)
+
+type xNum struct {
+    Re, Im  float64
 }
 
 
-func solveEquation(a, b, c float64) (float64, float64) {
+type Solution struct {
+    x1, x2  xNum
+    Success bool
+    Comment string
+}
+
+
+func main() {
+    a, b, c := getParameters()
+    printEquation(a, b, c)
+
+    sol := solveEquation(a, b, c)
+    printSolution(sol)
+}
+
+
+func solveEquation(a, b, c float64) (Solution) {
     var x1, x2 float64
 
     if (a != 0) {
@@ -80,15 +91,20 @@ func printEquation(a, b, c float64) {
 }
 
 
+func printSolution(sol Solution) {
+}
+
+
 func getParameters() (float64, float64, float64) {
     var a, b, c float64
-    fmt.Println("Enter parameters of equation:")
-    fmt.Println("ax^2 + bx + c = 0")
+    fmt.Println("Enter parameters of equation ax^2 + bx + c = 0")
+
     fmt.Print("a = ");
 	fmt.Scan(&a)
     fmt.Print("b = ");
 	fmt.Scan(&b)
     fmt.Print("c = ");
 	fmt.Scan(&c)
+
     return a, b, c
 }
