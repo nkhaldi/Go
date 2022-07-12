@@ -3,50 +3,67 @@ package main
 import "fmt"
 
 func main() {
+    for {
     a, b, c := getParameters()
     printEquation(a, b, c)
-    x1, x2 := solveEquation(a, b, c)
-    fmt.Printf("x1 = %.2f, x2 = %.2f\n", x1, x2)
+}
+    //x1, x2 := solveEquation(a, b, c)
+    //fmt.Printf("x1 = %.2f, x2 = %.2f\n", x1, x2)
 }
 
 
 func solveEquation(a, b, c float32) (float32, float32) {
     var x1, x2 float32
 
-    x1 = 123.123
-    x2 = 321.321
+    x1 = 123.45
+    x2 = 321.54
     return x1, x2
 }
 
 
 func printEquation(a, b, c float32) {
-    if (a == -1) {
-        fmt.Print("-")
-    } else if (a != 0 && a != 1) {
-        fmt.Print(a)
-    }
-    fmt.Print("x^2 ")
-
-    if (b > 0) {
-        if (b == 1) {
-            fmt.Print("+ x ", b)
-        } else {
-            fmt.Printf("+ %.2fx ", b)
+    if (a != 0) {
+        if (a == -1) {
+            fmt.Print("-")
+        } else if (a != 1) {
+            fmt.Print(a)
         }
-    } else if (b < 0) {
-        if (b == -1) {
-            fmt.Printf("- x ", -b)
+        fmt.Print("*x^2")
+    }
+    if (b != 0) {
+        if (a != 0) {
+            if (b > 0) {
+                fmt.Print(" + ")
+            } else {
+                fmt.Print(" - ")
+            }
+            if (b*b != 1) {
+                fmt.Printf("%.2f", b)
+            }
         } else {
-            fmt.Printf("- %.2fx ", b)
+            if (b == -1) {
+                fmt.Print("-")
+            } else if (b != 1) {
+                fmt.Printf("%.2f", b)
+            }
+        }
+        fmt.Print("*x");
+    }
+    if (c != 0) {
+        if (a != 0 || b != 0) {
+            if (c > 0) {
+                fmt.Printf(" + %.2f", c)
+            } else {
+                fmt.Printf(" - %.2f", -c)
+            }
+        } else {
+            fmt.Printf("%.2f", c)
         }
     }
-    if (c > 0) {
-        fmt.Printf("+ %.2fx ", c)
+    if (a == 0 && b == 0 && c == 0) {
+        fmt.Print("0")
     }
-    if (c < 0) {
-        fmt.Printf("- %.2fx ", -c)
-    }
-    fmt.Println("= 0")
+    fmt.Println(" = 0")
 }
 
 
