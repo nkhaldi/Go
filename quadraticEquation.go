@@ -14,7 +14,7 @@ type xNum struct {
 type Solution struct {
     x1, x2  xNum
     Success bool
-    Comment string
+    Message string
 }
 
 
