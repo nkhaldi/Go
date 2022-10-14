@@ -37,7 +37,12 @@ func solveEquation(a, b, c float64) Solution {
 	} else if b != 0 {
 		x1 = -c / b
 	}
-	return x1, x2
+
+	xx1 := xNum{Re: x1, Im: 0}
+	xx2 := xNum{Re: x2, Im: 0}
+	sol := Solution{x1: xx1, x2: xx2, Success: true}
+
+	return sol
 }
 
 func printEquation(a, b, c float64) {
@@ -86,6 +91,8 @@ func printEquation(a, b, c float64) {
 }
 
 func printSolution(sol Solution) {
+	fmt.Println("x1 = ", sol.x1.Re)
+	fmt.Println("x2 = ", sol.x2.Re)
 }
 
 func getParameters() (float64, float64, float64) {
