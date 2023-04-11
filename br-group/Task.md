@@ -16,5 +16,5 @@
 
 ## Требования
 + Код выложен на [github](https://github.com/)
-+ При решении использовать github.com/gorilla/websocket для работы с WebSocket
++ При решении использовать https://github.com/gorilla/websocket для работы с WebSocket
 + Написать тесты
