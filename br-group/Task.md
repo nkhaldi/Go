@@ -3,7 +3,7 @@
 ## Описание
 
 Требуется реализовать подключение к WebSocket биржи [ascendex](https://ascendex.github.io/ascendex-pro-api/#websocket).<br>
-Интерфейс подключения содержится в файле [apiclient.go](apiclient.go)
+Интерфейс подключения содержится в файле [apiclient.go](/br-group/apiclient.go)
 
 + **Connection** - функция должна реализовать подключение к WebSocket биржи.<br>
 Если происходит проблемы с подключением, то должна вернуть ошибку
